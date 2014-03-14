@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class SimpleListUtils
 {
   /**
-   * Find the kth largest element of a simple list.
+   * Find the kth smallest element of a simple list.
    *
    * @pre
    *   No two values in the list are equal.  We have this precondition
@@ -18,6 +18,10 @@ public class SimpleListUtils
    * @post
    *   There are exactly k values smaller than val in the list.  A
    *   value is "smaller" than val if order.compare(value, val) < 0.
+   * @post
+   *   The elements of the list may have been rearranged.
+   * @post
+   *   No elements have been added to or removed from the ilst.
    */
   public static <T> T kthSmallest(SimpleList<T> lst, Comparator<T> order, int k)
   {
