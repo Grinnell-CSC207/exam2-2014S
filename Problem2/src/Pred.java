@@ -42,10 +42,11 @@ public class Pred
    *   pred.test(val) holds if and only if left.test(val) holds
    *   and right.test(val) holds.
    */
-  public static <T> Predicate<T> and(Predicate<? super T> left, Predicate<? super T> right)
+  public static <T> Predicate<T> and(Predicate<? super T> left, 
+      Predicate<? super T> right)
   {
     // STUB
-    return null;
+    return munge(ACCEPT);
   } // and(Predicate<T>, Predicate<T>)
 
   /**
@@ -60,7 +61,7 @@ public class Pred
   public static <T> Predicate<T> not(Predicate<T> derp)
   {
     // STUB
-    return null;
+    return munge(ACCEPT);
   } // not(Predicate<T>)
 
   /**
@@ -73,10 +74,25 @@ public class Pred
    *   pred.test(val) holds if and only if left.test(val) holds or
    *   right.test(val) holds.
    */
-  public static <T> Predicate<T> or(Predicate<T> left, Predicate<T> right)
+  public static <T> Predicate<T> or(Predicate<? super T> left, 
+          Predicate<? super T> right)
   {
     // STUB
-    return null;
+    return munge(ACCEPT);
   } // or(Predicate<T>, Predicate<T>)
 
+  /**
+   * Convert a predicate that works on a superclass to a predicate
+   * that works on a subclass.
+   */
+  public static <T> Predicate<T> munge(final Predicate<? super T> pred)
+  {
+    return new Predicate<T>() 
+        {
+          public boolean test(T val)
+          {
+            return pred.test(val);
+          } // test(T)
+        }; // new Predicate<T>
+  } // munge(Predicate)
 } // class Pred
