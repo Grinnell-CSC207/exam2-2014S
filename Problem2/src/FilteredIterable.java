@@ -18,7 +18,7 @@ public class FilteredIterable<T>
   /**
    * The predicate used for filtering.
    */
-  Predicate<T> pred;
+  Predicate<? super T> pred;
 
   // +--------------+----------------------------------------------------
   // | Constructors |
@@ -28,11 +28,11 @@ public class FilteredIterable<T>
    * Build a new iterable whose iterators are the iterators of base,
    * filtered by pred.
    */
-  public FilteredIterable(Iterable<T> base, Predicate<T> pred)
+  public FilteredIterable(Iterable<T> base, Predicate<? super T> pred)
   {
     this.base = base;
     this.pred = pred;
-  } // FilteredIterable(Iterable<T>, Predicate<T>)
+  } // FilteredIterable(Iterable<T>, Predicate<? super T>)
 
   // +---------+---------------------------------------------------------
   // | Methods |
