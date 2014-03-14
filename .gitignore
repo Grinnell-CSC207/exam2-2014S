@@ -7,3 +7,6 @@
 
 # Eclipse stuff
 bin
+
+# Sam uses vi
+*.swp
