@@ -17,10 +17,10 @@ public class SortedSkipList<T>
   /**
    * Create a sorted list that sorts values by order.
    */
-  public SortedSkipList(Comparator<T> order)
+  public SortedSkipList(Comparator<? super T> order)
   {
     super(order);
-  } // SortedSkipList(Comparator<T>)
+  } // SortedSkipList(Comparator)
 
   /**
    * Create a sorted list that sorts values by order, using no more
@@ -28,10 +28,10 @@ public class SortedSkipList<T>
    *
    * @pre maxLevel >= 1
    */
-  public SortedSkipList(Comparator<T> order, int maxLevel)
+  public SortedSkipList(Comparator<? super T> order, int maxLevel)
   {
     super(order, maxLevel);
-  } // SortedSkipList(Comparator<T>, int)
+  } // SortedSkipList(Comparator, int)
 
   // +---------+---------------------------------------------------------
   // | Methods |

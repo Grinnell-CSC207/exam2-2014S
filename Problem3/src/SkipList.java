@@ -46,7 +46,7 @@ public class SkipList<T>
   /**
    * The comparator that determines the ordering of elements.
    */
-  Comparator<T> order;
+  Comparator<? super T> order;
 
   /**
    * The front of the list.
@@ -94,14 +94,14 @@ public class SkipList<T>
    * @pre maxHeight >= 1
    * @pre 0 <= p < 1
    */
-  public SkipList(Comparator<T> order, int maxHeight, double p)
+  public SkipList(Comparator<? super T> order, int maxHeight, double p)
   {
     this.order = order;
     this.maxHeight = maxHeight;
     this.p = p;
     this.front = new Node(maxHeight, null);
     this.height = 1;
-  } // SkipList(int, double)
+  } // SkipList(Comparator, int, double)
 
   /**
    * Create a new skip list with the default maximum height and
@@ -109,10 +109,10 @@ public class SkipList<T>
    *
    * @pre 0 <= p < 1
    */
-  public SkipList(Comparator<T> order, double p)
+  public SkipList(Comparator<? super T> order, double p)
   {
     this(order, DEFAULT_MAX_HEIGHT, p);
-  } // SkipList(double)
+  } // SkipList(Comparator, double)
 
   /**
    * Create a new skip list with a specified maximum height and
@@ -120,19 +120,19 @@ public class SkipList<T>
    *
    * @pre maxHeight >= 1
    */
-  public SkipList(Comparator<T> order, int maxHeight)
+  public SkipList(Comparator<? super T> order, int maxHeight)
   {
     this(order, maxHeight, DEFAULT_PROBABILITY);
-  } // SkipList(int)
+  } // SkipList(Comparator, int)
 
   /**
    * Create a new skip list with the default maximum height and
    * default probability of increasing levels.
    */
-  public SkipList(Comparator<T> order)
+  public SkipList(Comparator<? super T> order)
   {
     this(order, DEFAULT_MAX_HEIGHT, DEFAULT_PROBABILITY);
-  } // SkipList()
+  } // SkipList(Comparator)
 
   // +---------+---------------------------------------------------------
   // | Helpers |
