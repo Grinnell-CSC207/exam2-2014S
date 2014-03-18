@@ -165,7 +165,7 @@ public class SamTest
         if (leftDistance < rightDistance)
           return -1;
         else if (leftDistance > rightDistance)
-          return -2;
+          return 1;
         else
           return 0;
       } // compare(Point, Point)
