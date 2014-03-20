@@ -172,7 +172,7 @@ public class Problem2Tests
   @Test
   public void testAnd()
   {
-    test("and/1", vals, Pred.or(Pred.ACCEPT,Pred.REJECT), new Integer[] { });
+    test("and/1", vals, Pred.and(Pred.ACCEPT,Pred.REJECT), new Integer[] { });
     test("and/2", vals, Pred.and(even,atLeastFive), new Integer[] { 6, 8, 10 });
     test("and/3", vals, Pred.and(even,Pred.not(atLeastFive)),
         new Integer[] { 2, 4 });
