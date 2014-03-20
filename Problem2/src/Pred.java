@@ -42,8 +42,8 @@ public class Pred
    *   pred.test(val) holds if and only if left.test(val) holds
    *   and right.test(val) holds.
    */
-  public static <T> Predicate<T> and(Predicate<? super T> left, 
-      Predicate<? super T> right)
+  public static <T> Predicate<T> and(final Predicate<? super T> left, 
+      final Predicate<? super T> right)
   {
     // STUB
     return munge(ACCEPT);
@@ -58,7 +58,7 @@ public class Pred
    * @post
    *   pred.test(val) holds if and only if derp.test(val) does not hold.
    */
-  public static <T> Predicate<T> not(Predicate<T> derp)
+  public static <T> Predicate<T> not(final Predicate<T> derp)
   {
     // STUB
     return munge(ACCEPT);
@@ -74,8 +74,8 @@ public class Pred
    *   pred.test(val) holds if and only if left.test(val) holds or
    *   right.test(val) holds.
    */
-  public static <T> Predicate<T> or(Predicate<? super T> left, 
-          Predicate<? super T> right)
+  public static <T> Predicate<T> or(final Predicate<? super T> left, 
+          final Predicate<? super T> right)
   {
     // STUB
     return munge(ACCEPT);
