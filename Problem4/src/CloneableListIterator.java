@@ -13,4 +13,5 @@ import java.util.ListIterator;
 public interface CloneableListIterator<T>
   extends Cloneable, ListIterator<T>
 {
+  public CloneableListIterator<T> clone();
 } // interface CloneableListIterator<T>
